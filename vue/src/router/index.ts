@@ -5,7 +5,8 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/',
     name: 'welcome',
-    component: HelloWorld
+    component: HelloWorld,
+    props: { msg: 'Hello world!' }
   }
 ]
 

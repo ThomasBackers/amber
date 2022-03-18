@@ -1,17 +1,18 @@
 import { defineStore } from 'pinia'
 
-type Profile = {} | {
+export type Profile = {
   avatarUrl: string,
   username: string
-}
-type userState = {
+} | null
+
+export type userState = {
   profile: Profile
   token: string | null
 }
 
-export const useUserStore = defineStore('user', {
+export const useUserStore = defineStore('userStore', {
   state: () => ({
-    profile: {},
+    profile: null,
     token: null
   } as userState),
   getters: {
