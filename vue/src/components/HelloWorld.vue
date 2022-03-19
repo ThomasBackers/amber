@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import { mapActions, storeToRefs } from 'pinia'
+import { storeToRefs } from 'pinia'
 import { useUserStore } from '../store/user'
 
 const userStore = useUserStore()
 const { profile, token } = storeToRefs(userStore)
-const { setUser } = mapActions(useUserStore, ['setUser'])
+const { setUser } = userStore
 
 defineProps<{
   msg: String
@@ -18,7 +18,6 @@ const onListClick = () => {
       username: 'Admin'
     }, 'YgxHjK15JHJ5444KjhdbTGx')
   } else setUser(null, null)
-  console.log(profile.value, token.value)
 }
 </script>
 
@@ -27,10 +26,10 @@ const onListClick = () => {
     <h1>{{ msg }}</h1>
 
     <ul
-      class="h-4 bg-black text-white"
+      class="h-14 bg-black text-white"
       @click="onListClick"
     >
-      <li>{{ profile }}</li>
+      <li>{{ profile?.avatarUrl }} {{ profile?.username }}</li>
       <li>{{ token }}</li>
     </ul>
   </div>

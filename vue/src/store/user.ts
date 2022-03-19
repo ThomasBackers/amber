@@ -1,11 +1,11 @@
 import { defineStore } from 'pinia'
 
-export type Profile = {
+type Profile = {
   avatarUrl: string,
   username: string
 } | null
 
-export type userState = {
+type userState = {
   profile: Profile
   token: string | null
 }
