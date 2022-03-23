@@ -7,9 +7,7 @@ const userStore = useUserStore()
 const { profile, token } = storeToRefs(userStore)
 const { setUser } = mapActions(useUserStore, ['setUser'])
 
-defineProps<{
-  msg: String
-}>()
+defineProps<{ msg: String }>()
 
 const onListClick = () => {
   if (!profile.value && !token.value) {
