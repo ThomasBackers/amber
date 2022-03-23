@@ -1,12 +1,36 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HelloWorld from '../components/HelloWorld.vue'
+// requiresAuth
+import AppLayout from '../layouts/AppLayout.vue'
+import WelcomeView from '../views/WelcomeView.vue'
+// requiresGuest
+import GuestLayout from '../layouts/GuestLayout.vue'
+import LoginView from '../views/LoginView.vue'
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'welcome',
-    component: HelloWorld,
-    props: { msg: 'Hello world!' }
+    component: AppLayout,
+    meta: { requiresAuth: true },
+    children: [
+      {
+        path: '',
+        name: 'Welcome',
+        component: WelcomeView
+      }
+    ]
+  },
+  {
+    path: '/guest',
+    component: GuestLayout,
+    redirect: 'Login',
+    meta: { requiresGuest: true },
+    children: [
+      {
+        path: '/login',
+        name: 'Login',
+        component: LoginView
+      }
+    ]
   }
 ]
 

@@ -5,7 +5,7 @@ type Profile = {
   username: string
 } | null
 
-type userState = {
+type UserState = {
   profile: Profile
   token: string | null
 }
@@ -14,10 +14,10 @@ export const useUserStore = defineStore('userStore', {
   state: () => ({
     profile: null,
     token: null
-  } as userState),
+  } as UserState),
   getters: {
-    getProfile: (state: userState): Profile => state.profile,
-    getToken: (state: userState): string | null => state.token
+    getProfile: (state: UserState): Profile => state.profile,
+    getToken: (state: UserState): string | null => state.token
   },
   actions: {
     setUser (profile: Profile, token: string | null): void {
