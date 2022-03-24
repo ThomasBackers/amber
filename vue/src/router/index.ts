@@ -1,12 +1,12 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-// requiresAuth
+import { createRouter, createWebHistory } from 'vue-router'
+// App components
 import AppLayout from '../layouts/AppLayout.vue'
 import WelcomeView from '../views/WelcomeView.vue'
-// requiresGuest
+// Guest components
 import GuestLayout from '../layouts/GuestLayout.vue'
 import LoginView from '../views/LoginView.vue'
 
-const routes: RouteRecordRaw[] = [
+const routes = [
   {
     path: '/',
     component: AppLayout,
