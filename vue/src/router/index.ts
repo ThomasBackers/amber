@@ -22,7 +22,7 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/guest',
     component: GuestLayout,
-    redirect: 'Login',
+    redirect: { name: 'Login' },
     meta: { requiresGuest: true },
     children: [
       {

@@ -1,8 +1,5 @@
-<script setup lang="ts">
-</script>
-
 <template>
-  <div class="min-h-screen">
+  <div class="min-h-screen dark:bg-black">
     <router-view></router-view>
   </div>
 </template>

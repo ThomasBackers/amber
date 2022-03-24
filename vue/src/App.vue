@@ -1,7 +1,8 @@
 <script setup lang="ts">
-const LOCAL_STORAGE_KEY: string = 'amberConfig'
-
-console.log(localStorage.getItem(LOCAL_STORAGE_KEY))
+if (
+  localStorage.theme === 'dark' ||
+  (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+) document.documentElement.classList.add('dark')
 </script>
 
 <template>
