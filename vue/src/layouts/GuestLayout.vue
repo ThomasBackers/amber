@@ -13,7 +13,7 @@ const switchShowBottomMenu = (): void => setShowBottomMenu(!showBottomMenu.value
 
 <template>
   <div class="
-    text-gray-800 font-raleway
+    text-gray-800 font-raleway transition-colors
     dark:bg-gray-900 dark:text-gray-200
   ">
     <header class="flex py-4 absolute w-full">
@@ -28,7 +28,7 @@ const switchShowBottomMenu = (): void => setShowBottomMenu(!showBottomMenu.value
           amber
         </h1>
 
-        <p class="text-gray-700 dark:text-gray-300 text-lg">
+        <p class="text-gray-700 dark:text-gray-300 text-lg transition-colors">
           sow memories like mosquitoes in amber
         </p>
 
@@ -37,7 +37,7 @@ const switchShowBottomMenu = (): void => setShowBottomMenu(!showBottomMenu.value
           type="button"
           @click="() => {}"
           class="
-            text-gray-200 bg-gray-900 rounded py-2 px-5 font-medium text-sm uppercase tracking-widest mt-5 shadow-md
+            text-gray-200 bg-gray-900 rounded py-2 px-5 font-medium text-sm uppercase tracking-widest mt-5 shadow-md transition-all
             dark:text-gray-900 dark:bg-gray-200 dark:font-semibold dark:shadow-gray-700
           "
         >
@@ -48,10 +48,13 @@ const switchShowBottomMenu = (): void => setShowBottomMenu(!showBottomMenu.value
 
     <BottomMenuButton :showBottomMenu="showBottomMenu" @onClick="switchShowBottomMenu" />
 
-    <footer class="
-      fixed bottom-0 left-1/2 w-4/5 -ml-[40%] h-2 bg-gray-200 border-t-[1px] border-x-[1px] border-gray-400 rounded-t
-      dark:bg-gray-600
-    ">
+    <footer
+      class="
+        fixed bottom-0 left-1/2 w-4/5 -ml-[40%] bg-gray-200 border-t-[1px] border-x-[1px] border-gray-400 rounded-t shadow-lg transition-all
+        dark:bg-gray-600 dark:shadow-gray-700
+      "
+      :class="showBottomMenu ? 'h-[85vh]' : 'h-2'"
+    >
       <router-view></router-view>
     </footer>
   </div>
