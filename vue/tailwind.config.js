@@ -5,12 +5,11 @@ module.exports = {
     './src/**/*.{vue,js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {
-      fontFamily: {
-        tangerine: ['Tangerine', 'sans-serif'],
-        raleway: ['Raleway', 'sans-serif']
-      }
-    }
+    fontFamily: {
+      tangerine: ['Tangerine', 'sans-serif'],
+      raleway: ['Raleway', 'sans-serif']
+    },
+    extend: {}
   },
   plugins: [
     require('@tailwindcss/forms')
