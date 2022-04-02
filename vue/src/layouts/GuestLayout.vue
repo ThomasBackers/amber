@@ -3,6 +3,7 @@ import { useUiStore } from '../store/ui'
 import { storeToRefs } from 'pinia'
 import ThemeToggleSwitch from '../components/ThemeToggleSwitch.vue'
 import BottomMenuButton from '../components/BottomMenuButton.vue'
+import BottomMenu from '../components/BottomMenu.vue'
 
 const uiStore = useUiStore()
 const { showBottomMenu } = storeToRefs(uiStore)
@@ -37,7 +38,8 @@ const switchShowBottomMenu = (): void => setShowBottomMenu(!showBottomMenu.value
           type="button"
           @click="() => {}"
           class="
-            text-gray-200 bg-gray-900 rounded py-2 px-5 font-medium text-sm uppercase tracking-widest mt-5 shadow-md transition-all
+            text-gray-200 bg-gray-900 rounded py-2 px-5 font-medium text-sm uppercase
+            tracking-widest mt-5 shadow-md transition-all
             dark:text-gray-900 dark:bg-gray-200 dark:font-semibold dark:shadow-gray-700
           "
         >
@@ -48,14 +50,6 @@ const switchShowBottomMenu = (): void => setShowBottomMenu(!showBottomMenu.value
 
     <BottomMenuButton :showBottomMenu="showBottomMenu" @onClick="switchShowBottomMenu" />
 
-    <footer
-      class="
-        fixed bottom-0 left-1/2 w-4/5 -ml-[40%] bg-gray-200 border-t-[1px] border-x-[1px] border-gray-400 rounded-t shadow-lg transition-all
-        dark:bg-gray-600 dark:shadow-gray-700
-      "
-      :class="showBottomMenu ? 'h-[85vh]' : 'h-2'"
-    >
-      <router-view></router-view>
-    </footer>
+    <BottomMenu :showBottomMenu="showBottomMenu" />
   </div>
 </template>

@@ -1,14 +1,18 @@
 import { createRouter, createWebHistory } from 'vue-router'
+// Guest components
+import GuestLayout from '../layouts/GuestLayout.vue'
 // App components
 import AppLayout from '../layouts/AppLayout.vue'
 import WelcomeView from '../views/WelcomeView.vue'
-// Guest components
-import GuestLayout from '../layouts/GuestLayout.vue'
-import LoginView from '../views/LoginView.vue'
 
 const routes = [
   {
     path: '/',
+    component: GuestLayout,
+    meta: { guestOnly: true }
+  },
+  {
+    path: '/app',
     component: AppLayout,
     meta: { requiresAuth: true },
     children: [
@@ -16,19 +20,6 @@ const routes = [
         path: '',
         name: 'Welcome',
         component: WelcomeView
-      }
-    ]
-  },
-  {
-    path: '/guest',
-    component: GuestLayout,
-    redirect: { name: 'Login' },
-    meta: { requiresGuest: true },
-    children: [
-      {
-        path: '/login',
-        name: 'Login',
-        component: LoginView
       }
     ]
   }
