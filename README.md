@@ -12,7 +12,7 @@ For the network side, the ideal would be to allow people to express themselves i
 
 And while we're at it, we might as well try to get a glimpse of what a social network that cares about its users first might look like.
 
-### A vast program
+### Big undertaking
 
 but it fits very well with the idea of learning and experimenting a lot
 
