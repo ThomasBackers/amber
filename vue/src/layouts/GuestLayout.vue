@@ -48,7 +48,10 @@ const switchShowBottomMenu = (): void => setShowBottomMenu(!showBottomMenu.value
       </div>
     </section>
 
-    <BottomMenuButton :showBottomMenu="showBottomMenu" @onClick="switchShowBottomMenu" />
+    <BottomMenuButton
+      :showBottomMenu="showBottomMenu"
+      @onClick="switchShowBottomMenu"
+    />
 
     <BottomMenu :showBottomMenu="showBottomMenu" />
   </div>

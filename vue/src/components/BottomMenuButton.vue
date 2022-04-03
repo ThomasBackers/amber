@@ -2,7 +2,7 @@
 import { defineProps } from 'vue'
 import { ChevronUpIcon } from '@heroicons/vue/outline'
 
-defineProps<{ showBottomMenu: Boolean }>()
+defineProps<{ showBottomMenu: boolean }>()
 </script>
 
 <template>
